@@ -58,5 +58,6 @@ def main():
     bose.set_quantity(1000)
     bose.show()
 
+
 if __name__ == "__main__":
     main()

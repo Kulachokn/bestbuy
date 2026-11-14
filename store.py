@@ -1,5 +1,6 @@
 import products
 
+
 class Store:
     def __init__(self, product_list=None):
         if product_list is None:
@@ -32,7 +33,6 @@ class Store:
         return total
 
 
-
 def main():
     product_list = [products.Product("MacBook Air M2", price=1450, quantity=100),
                     products.Product("Bose QuietComfort Earbuds", price=250, quantity=500),
@@ -43,6 +43,7 @@ def main():
     active_products = best_buy.get_all_products()
     print(best_buy.get_total_quantity())
     print(best_buy.order([(active_products[0], 1), (active_products[1], 2)]))
+
 
 if __name__ == "__main__":
     main()
