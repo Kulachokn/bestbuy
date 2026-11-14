@@ -5,7 +5,7 @@ class Product:
         self.name = name
         if price < 0:
             raise ValueError("Price cannot be negative")
-        self.price = price
+        self.price = float(price)
         if quantity < 0:
             raise ValueError("Quantity cannot be negative")
         self.quantity = quantity
@@ -16,7 +16,7 @@ class Product:
 
     def set_quantity(self, quantity):
         if quantity < 0:
-            raise ValueError("Quantity cannot be less than one")
+            raise ValueError("Quantity cannot be negative")
         self.quantity = quantity
         if self.quantity == 0:
             self.deactivate()
@@ -44,15 +44,19 @@ class Product:
         return total
 
 
-bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
-mac = Product("MacBook Air M2", price=1450, quantity=100)
+def main():
+    bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
+    mac = Product("MacBook Air M2", price=1450, quantity=100)
 
-print(bose.buy(50))
-print(mac.buy(100))
-print(mac.is_active())
+    print(bose.buy(50))
+    print(mac.buy(100))
+    print(mac.is_active())
 
-bose.show()
-mac.show()
+    bose.show()
+    mac.show()
 
-bose.set_quantity(1000)
-bose.show()
+    bose.set_quantity(1000)
+    bose.show()
+
+if __name__ == "__main__":
+    main()
